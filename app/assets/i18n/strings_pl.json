@@ -47,6 +47,11 @@
       "ip": "IP:",
       "port": "Port:",
       "alias": "Alias:"
+    },
+    "quickSave": {
+      "off": "@:general.off",
+      "favorites": "Ulubione",
+      "on": "@:general.on"
     }
   },
   "sendTab": {
@@ -162,7 +167,7 @@
     },
     "noConnection": {
       "symptom": "Oba urządzenia nie mogą się nawzajem wykryć ani dzielić się plikami.",
-      "solution": "Problem istnieje po obu stronach? Upewnij się, że oba urządzenia są w tej samej sieci Wi-Fi i mają takie same ustawienia (port, adres multicast, szyfrowanie). Wi-Fi może nie zezwalać na komunikację między uczestnikami. W takim przypadku opcję tę należy włączyć w routerze."
+      "solution": "Problem istnieje po obu stronach? Upewnij się, że oba urządzenia są w tej samej sieci Wi-Fi i mają takie same ustawienia (port, adres multicast, szyfrowanie). Wi-Fi może nie zezwalać na komunikację między uczestnikami z powodu izolacji punktu dostępu (AP). W takim przypadku tę opcję należy wyłączyć w routerze."
     }
   },
   "receiveHistoryPage": {
@@ -270,7 +275,8 @@
     "addFile": {
       "title": "Dodaj do wyboru",
       "content": "Co chcesz dodać?"
-    },"openFile": {
+    },
+    "openFile": {
       "title": "Otwórz plik",
       "content": "Czy chcesz otworzyć odebrany plik?"
     },
@@ -366,7 +372,11 @@
     },
     "quickSaveFromFavoritesNotice": {
       "title": "@:general.quickSaveFromFavorites",
-      "content": "Żądania plików są akceptowane automatycznie z urządzeń znajdujących się na liście kontaktów."
+      "content": [
+        "Żądania plików są teraz akceptowane automatycznie z urządzeń na liście ulubionych.",
+        "Uwaga! Obecnie nie jest to całkowicie bezpieczne, ponieważ haker, który ma odcisk palca dowolnego urządzenia z listy ulubionych, może wysyłać Ci pliki bez ograniczeń.",
+        "Jednak ta opcja jest nadal bezpieczniejsza niż umożliwienie wszystkim użytkownikom w sieci lokalnej wysyłanie plików bez ograniczeń."
+      ]
     },
     "pin": {
       "title": "Wpisz kod PIN"
