@@ -14,6 +14,7 @@
     "copiedToClipboard": "Kopierat till urklipp",
     "decline": "Avböj",
     "done": "Klar",
+    "delete": "Ta bort",
     "edit": "Redigera",
     "error": "Fel",
     "example": "Exempel",
@@ -27,16 +28,18 @@
     "open": "Öppna",
     "queue": "Kö",
     "quickSave": "Snabbspara",
+    "quickSaveFromFavorites": "Snabbspara för \"Favoriter\"",
     "renamed": "Bytt namn",
     "reset": "Återställ",
     "restart": "Starta om",
     "settings": "Inställningar",
     "skipped": "Hoppad över",
     "start": "Börja",
-    "stop": "Avsluta",
+    "stop": "Stopp",
     "save": "Spara",
     "unchanged": "Oförändrad",
-    "unknown": "Okänd"
+    "unknown": "Okänd",
+    "noItemInClipboard": "Inga objekt i urklipp."
   },
   "receiveTab": {
     "title": "Ta emot",
@@ -44,6 +47,11 @@
       "ip": "IP:",
       "port": "Port:",
       "alias": "Alias:"
+    },
+    "quickSave": {
+      "off": "@:general.off",
+      "favorites": "Favoriter",
+      "on": "@:general.on"
     }
   },
   "sendTab": {
@@ -58,12 +66,14 @@
       "folder": "Mapp",
       "media": "Media",
       "text": "Text",
-      "app": "App"
+      "app": "App",
+      "clipboard": "Klistra in"
     },
     "shareIntentInfo": "Du kan också använda \"Dela\"-funtionen i din mobiltelefon för att lättare välja filer.",
     "nearbyDevices": "Närbelägna enhter",
     "thisDevice": "Denna Enhet",
     "scan": "Leta efter enheter",
+    "manualSending": "Manuell sändning",
     "sendMode": "Sändningsläge",
     "sendModes": {
       "single": "En mottagare",
@@ -72,7 +82,7 @@
     },
     "sendModeHelp": "Förklaring",
     "help": "Kontrollera att den sökta enheten är uppkopplad till samma wifi nätverk som din enhet.",
-    "placeItems": "Placera objekt att dela"
+    "placeItems": "Placera objekt att dela."
   },
   "settingsTab": {
     "title": "Inställningar",
@@ -86,25 +96,35 @@
       },
       "color": "Färg",
       "colorOptions": {
-        "system": "System"
+        "system": "System",
+        "oled": "OLED"
       },
       "language": "Språk",
       "languageOptions": {
         "system": "System"
       },
       "saveWindowPlacement": "Avsluta: Spara fönsterplacering",
+      "saveWindowPlacementWindows": "Spara fönsterposition efter avslut",
       "minimizeToTray": "Lämna: minimera till tray",
       "launchAtStartup": "Starta automatiskt efter inloggning",
       "launchMinimized": "Starta automatiskt: starta gömd",
+      "showInContextMenu": "Visa LocalSend i snabbmenyn",
       "animations": "Animationer"
     },
     "receive": {
       "title": "Ta emot",
       "quickSave": "@:general.quickSave",
+      "quickSaveFromFavorites": "@:general.quickSaveFromFavorites",
+      "requirePin": "@:webSharePage.requirePin",
+      "autoFinish": "Automatisk avslutning",
       "destination": "Destination",
       "downloads": "(Hämtade)",
       "saveToGallery": "Spara media i galleriet",
       "saveToHistory": "Spara till historik"
+    },
+    "send": {
+      "title": "Skicka",
+      "shareViaLinkAutoAccept": "Acceptera förfrågningar automatiskt i läget \"Dela via länk\""
     },
     "network": {
       "title": "Nätverk",
@@ -114,10 +134,20 @@
       "deviceType": "Enhetstyp",
       "deviceModel": "Enhet modell",
       "port": "Port",
+      "discoveryTimeout": "Tidsgräns för upptäckt",
+      "useSystemName": "Använd systemnamn",
+      "generateRandomAlias": "Generera slumpmässigt alias",
       "portWarning": "Du kanske inte upptäcks av andra enheter eftersom du använder en anpassad port. (standard: {defaultPort})",
       "encryption": "Kryptering",
       "multicastGroup": "Multicast",
       "multicastGroupWarning": "Du kanske inte upptäcks av andra enheter eftersom du använder en anpassad multicast-adress. (standard: {defaultMulticast})"
+    },
+    "other": {
+      "title": "Annat",
+      "support": "Stöd LocalSend",
+      "donate": "Donera",
+      "privacyPolicy": "Sekretesspolicy",
+      "termsOfUse": "Användarvillkor"
     },
     "advancedSettings": "Avancerade inställningar"
   },
@@ -131,6 +161,10 @@
       "solution": "Detta är troligtvis ett brandväggsproblem. Du kan lösa det genom att tillåta inkommande anslutningar (UDP och TCP) på port {port}.",
       "openFirewall": "Öppna brandväggen"
     },
+    "noDiscovery": {
+      "symptom": "Denna enhet kan inte upptäcka andra enheter.",
+      "solution": "Se till att alla enheter är på samma Wi-Fi-nätverk och delar samma konfiguration (port, multicast-adress, kryptering). Du kan försöka skriva in IP-adressen för målenheten manuellt. Om detta fungerar, överväg att lägga till den här enheten till favoriterna så att den kan upptäckas automatiskt i framtiden."
+    },
     "noConnection": {
       "symptom": "Båda enheterna kan inte upptäcka varandra eller dela filer.",
       "solution": "Problemet finns på båda sidor? Då måste du se till att båda enheterna är anslutna till samma wifi-nätverk och delar samma konfiguration (port, multicast-adress, kryptering). Wi-Fi kanske inte tillåter kommunikation mellan deltagare. I så fall måste alternativet vara aktiverat på routern."
@@ -143,6 +177,7 @@
     "empty": "Historiken är tom.",
     "entryActions": {
       "open": "Öppna fil",
+      "showInFolder": "Visa i mapp",
       "info": "Information",
       "deleteFromHistory": "Ta bort från historik"
     }
@@ -173,8 +208,9 @@
     "saveToGalleryOff": "Avstängd automatiskt eftersom det finns kataloger."
   },
   "sendPage": {
-    "waiting": "Väntar på svar...",
+    "waiting": "Väntar på svar…",
     "rejected": "Mottagaren har avvisat begäran.",
+    "tooManyAttempts": "@:web.tooManyAttempts",
     "busy": "Mottagaren är upptagen med en annan förfrågan."
   },
   "progressPage": {
@@ -183,7 +219,7 @@
     "savedToGallery": "Sparat i Foton",
     "total": {
       "title": {
-        "sending": "Total  ({time})",
+        "sending": "Totalt förlopp ({time})",
         "finishedError": "Avslutad med fel",
         "canceledSender": "Avbruten av sändaren",
         "canceledReceiver": "Avbruten av mottagaren"
@@ -195,8 +231,8 @@
   },
   "webSharePage": {
     "title": "Dela via länk",
-    "loading": "Startar server...",
-    "stopping": "Stoppar servern...",
+    "loading": "Startar server…",
+    "stopping": "Stoppar servern…",
     "error": "Ett fel inträffade vid start av servern.",
     "openLink": {
       "one": "Öppna denna länk i webbläsaren:",
@@ -205,17 +241,35 @@
     "requests": "Förfrågningar",
     "noRequests": "Inga förfrågningar ännu.",
     "encryption": "@:settingsTab.network.encryption",
+    "autoAccept": "Acceptera förfrågningar automatiskt",
+    "requirePin": "Kräv PIN-kod",
+    "pinHint": "PIN-koden är \"{pin}\"",
     "encryptionHint": "LocalSend använder ett självsignerat certifikat. Du behöver acceptera det i webbläsaren.",
     "pendingRequests": "Väntande förfrågningar: {n}"
   },
   "aboutPage": {
-    "title": "Om LocalSend"
+    "title": "Om LocalSend",
+    "description": [
+      "LocalSend är fri programvara med öppen källkod som låter dig säkert dela filer och meddelanden med enheter i närheten över ditt lokala nätverk utan att behöva en internetanslutning.",
+      "Denna app är tillgänglig på Android, iOS, macOS, Windows och Linux. Du kan hitta alla nedladdningsalternativ på den officiella hemsidan."
+    ],
+    "author": "Upphovsman",
+    "contributors": "Bidragsgivare",
+    "packagers": "Förpackare",
+    "translators": "Översättare"
+  },
+  "donationPage": {
+    "title": "Donera",
+    "info": "LocalSend är fri programvara med öppen källkod och utan några annonser. Om du gillar appen kan du stödja utvecklingen med en donation.",
+    "donate": "Donera {amount}",
+    "thanks": "Tack så mycket!",
+    "restore": "Återställ köp"
   },
   "changelogPage": {
     "title": "Ändringslog"
   },
   "aliasGenerator(ignoreMissing, ignoreGpt)": {
-    "@info": "Different locales may have different words, it may not match 1:1",
+    "@info": "Olika språk kan ha olika ord, det kanske inte matchar 1:1",
     "adjectives": [
       "Bedårande",
       "Vacker",
@@ -292,6 +346,10 @@
       "title": "Lägg till i val",
       "content": "Vad vill du lägga till?"
     },
+    "openFile": {
+      "title": "Öppna fil",
+      "content": "Vill du öppna den mottagna filen?"
+    },
     "addressInput": {
       "title": "Skriv in adress",
       "hashtag": "Hashtag",
@@ -313,6 +371,23 @@
     "errorDialog": {
       "title": "@:general.error"
     },
+    "favoriteDialog": {
+      "title": "Favoriter",
+      "noFavorites": "Inga favoritenheter än.",
+      "addFavorite": "Lägg till"
+    },
+    "favoriteDeleteDialog": {
+      "title": "Ta bort från favoriter",
+      "content": "Vill du verkligen ta bort från favoriterna \"{name}\"?"
+    },
+    "favoriteEditDialog": {
+      "titleAdd": "Lägg till i favoriter",
+      "titleEdit": "Inställningar",
+      "name": "Enhetens namn",
+      "auto": "(auto)",
+      "ip": "IP-adress",
+      "port": "Port"
+    },
     "fileInfo": {
       "title": "Filinformation",
       "fileName": "Filnamn:",
@@ -324,6 +399,10 @@
     "fileNameInput": {
       "title": "Skriv in filnamn",
       "original": "Orginal: {original}"
+    },
+    "historyClearDialog": {
+      "title": "Rensa historik",
+      "content": "Vill du verkligen ta bort hela historiken?"
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
@@ -353,7 +432,7 @@
       "title": "Snabba Handlingar",
       "counter": "Disken",
       "prefix": "Prefix",
-      "padZero": "Stoppa med nollor",
+      "padZero": "Block med nollor",
       "sortBeforeCount": "Sortera alphabetiskt innan",
       "random": "Slumpmässig"
     },
@@ -361,20 +440,42 @@
       "title": "@:general.quickSave",
       "content": "Filförfrågningar accepteras automatiskt. Observera att alla i lokala nätverket kan skicka filer till dig."
     },
+    "quickSaveFromFavoritesNotice": {
+      "title": "@:general.quickSaveFromFavorites",
+      "content": [
+        "Filförfrågningar accepteras nu automatiskt från enheter i din favoritlista.",
+        "Varning! För närvarande är detta inte helt säkert, eftersom en hacker som har fingeravtrycket från vilken enhet som helst från din favoritlista kan skicka filer till dig utan begränsningar.",
+        "Detta alternativ är dock fortfarande säkrare än att låta alla användare på det lokala nätverket skicka filer till dig utan begränsningar."
+      ]
+    },
+    "pin": {
+      "title": "Ange PIN-kod"
+    },
     "sendModeHelp": {
       "title": "Sändningslägen",
       "single": "Skickar filer till en mottagare. Valet rensas efter avslutad filöverföring.",
       "multiple": "Skickar filer till flera mottagare. Valet rensas inte.",
       "link": "Mottagare som inte har LocalSend installerat kan ladda ner de valda filerna genom att öppna länken i deras webbläsare."
+    },
+    "zoom": {
+      "title": "URL"
     }
+  },
+  "sanitization": {
+    "empty": "Filnamnet får inte vara tomt",
+    "invalid": "Filnamnet innehåller ogiltiga tecken"
   },
   "tray": {
     "@info": "Apples Riktlinjer är väldigt strikta kring 'stäng' formuleringen.",
     "open": "@:general.open",
-    "close": "Avsluta LocalSend"
+    "close": "Avsluta LocalSend",
+    "closeWindows": "Avsluta"
   },
   "web": {
     "waiting": "@:sendPage.waiting",
+    "enterPin": "Ange PIN-kod",
+    "invalidPin": "Ogiltig PIN-kod",
+    "tooManyAttempts": "För många försök",
     "rejected": "Avvisad",
     "files": "Filer",
     "fileName": "Filnamn",
