@@ -81,12 +81,14 @@ const _translators = <AppLocale, List<String>>{
   ],
   AppLocale.sr: [
     'Nebojsa Tomic (@nebojsatomic)',
+    'Nemanja Dimitrijevic (@nemanya-d)',
   ],
   AppLocale.th: [
     '@watchakorn-18k',
   ],
   AppLocale.tr: [
     'Mert Şişmanoğlu (@mertssmnoglu)',
+    'Ali Mert Erdogan (@aliwert)',
   ],
   AppLocale.uk: [
     'Sergiy Tkachuk (@sergd88)',
